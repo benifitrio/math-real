@@ -11,13 +11,3 @@ app.get('/', (request, response) => {
 app.listen(PORT, () => {
     console.log(`Your app is listening on port ${PORT}`);
 });
-
-// cara 2
-// var express = require('express');
-// var serveStatic = require('serve-static');
-// app = express();
-
-// app.use(serveStatic(__dirname + "/src"));
-// var port = process.env.PORT || 5000;
-// app.listen(port);
-// console.log('server started '+ port);

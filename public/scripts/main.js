@@ -20,7 +20,7 @@ function Home() {
       <img src="../images/materi.png" width="50" class="rounded-full">
       </div>
         <p class="mt-2 text-xl font-bold text-center">Materi</p>
-        <p class="text-xs text-center">Lengkap beserta pembahasan contoh soal</p>
+        <p class="text-xs text-center">Lengkap beserta pembahasan soal</p>
       </a>
       <a href="#baca-doa" class="block w-1/2 bg-white dark:bg-selfmode dark:text-white rounded shadow-xl mr-2 p-4 menu border">
         <div class="flex justify-center w-full">
@@ -33,10 +33,10 @@ function Home() {
     <div class="flex w-full mt-2">
       <a href="#asmaul" class="block w-1/2 bg-white dark:bg-selfmode dark:text-white rounded shadow-xl mr-2 p-4 menu border">
       <div class="flex justify-center w-full">
-      <img src="../images/pustaka.png" width="50" class="rounded-full">
+      <img src="../images/PUSTAKA.png" width="50" class="rounded-full">
     </div>
     <p class="mt-2 text-xl font-bold text-center">Daftar Pustaka</p>
-    <p class="text-xs text-center">Kumpulan Referensi yang digunakan pada materi</p>
+    <p class="text-xs text-center">Referensi yang digunakan</p>
       </a>
       <a href="#bacaan-shalat" class="block w-1/2 bg-white rounded dark:bg-selfmode dark:text-white shadow-xl mr-2 p-4 menu border">
       <div class="flex justify-center w-full">
