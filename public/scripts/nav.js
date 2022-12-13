@@ -46,5 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (page === 'profil') profilPage()
         if (page === 'daftar-pustaka') daftarpustaka()
         if (page === 'petunjuk') petunjuk()
+        if (page === 'barisan') barisanBilangan()
+        if (page === 'divergen') divergen()
+        if (page === 'limit-fungsi') limitFungsi()
+        if (page === 'limit-takhingga') limitTakHingga()
+        if (page === 'konvergen') konvergen()
+        if (page === 'limit') limit()
     }
 });

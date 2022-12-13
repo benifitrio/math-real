@@ -108,7 +108,7 @@ const renderPage = () => {
         <div class="surah-body w-full text-left text-sm mb-2">
         <p>Barisan bilangan real adalah suatu fungsi bernilai real dengan ...</p> 
       </div>
-      <a href="#" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
+      <a href="#barisan" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
         </div>
     </div>
     <div class="w-full mt-4 surah bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl">
@@ -126,7 +126,7 @@ const renderPage = () => {
       Suatu barisan dikatan konvergen jika limit barisan ...
       </p> 
     </div>
-    <a href="#" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
+    <a href="#konvergen" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
       </div>
   </div>
   <div class="w-full mt-4 surah bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl">
@@ -144,7 +144,7 @@ const renderPage = () => {
         Misal (x<sub>2</sub>) adalah bilangan real. Barisan (x<sub>n</sub>) ...
         </p> 
       </div>
-      <a href="#" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
+      <a href="#divergen" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
         </div>
     </div>
     <div class="w-full mt-4 surah bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl">
@@ -161,7 +161,7 @@ const renderPage = () => {
         <p>Pada bagian ini kita akan mempelajari konsep limit fungsi. Sebelum melangkah leb...
         </p> 
       </div>
-      <a href="#" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
+      <a href="#limit-fungsi" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
         </div>
     </div>
     <div class="w-full mt-4 surah bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl">
@@ -177,10 +177,10 @@ const renderPage = () => {
         <div class="surah-body w-full text-left text-sm mb-2">
         <p>Ada beberapa konsep untuk menguji limit suatu fungsi ...</p> 
       </div>
-      <a href="#" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
+      <a href="#limit" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
         </div>
     </div>
-    <div class="w-full mt-4 surah bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl">
+    <div class="w-full mt-4 mb-6 surah bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl">
       <div class="w-full p-3 rounded-xl card surahId d-block">
         <div class="flex prevent justify-start items-center mb-2">
           <div class=" prevent surah-header rounded-full mr-2">
@@ -193,7 +193,7 @@ const renderPage = () => {
         <div class="surah-body w-full text-left text-sm mb-2">
         <p> Limit ketika x &#8594 &#8734, misalkan f terdefinisi pada [a, &#8734] untuk ...</p> 
       </div>
-      <a href="#" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
+      <a href="#limit-takhingga" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
         </div>
     </div>`;
 
@@ -220,7 +220,7 @@ const renderPage = () => {
 
 function profilPage() {
     homeContent.innerHTML =
-        `<div class="mt-4 surah font-sans d-block bg-bglightmode text-textlightmode shadow-2xl rounded-2xl dark:bg-selfmode dark:text-white">
+        `<div style="margin-bottom:7rem;" class="mt-4 surah font-sans d-block bg-bglightmode text-textlightmode shadow-2xl rounded-2xl dark:bg-selfmode dark:text-white">
     <img src="../images/diana.png" alt="CV DIANA" class=" shadow-2xl rounded-2xl" />
   </div>`
 }
@@ -316,7 +316,7 @@ function daftarpustaka() {
 
 function petunjuk() {
     homeContent.innerHTML =
-        `<div class="mt-4 surah font-sans d-block bg-bglightmode text-textlightmode shadow-2xl rounded-2xl dark:bg-selfmode dark:text-white">
-  <img src="../images/petunjuk.jpg" alt="CV DIANA" class=" shadow-2xl rounded-2xl" />
+        `<div style="margin-bottom:7rem;" class="mt-4 surah font-sans d-block bg-bglightmode text-textlightmode shadow-2xl rounded-2xl dark:bg-selfmode dark:text-white">
+  <img src="../images/petunjuk.jpg" alt="petunjuk" class=" shadow-2xl rounded-2xl" />
 </div>`
 }
