@@ -1,6 +1,6 @@
 function konvergen() {
     homeContent.innerHTML = `
-<div style="margin-bottom:4rem;" class="mt-4 surah font-sans p-3 d-block bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl rounded-2xl">
+<div style="margin-bottom:6rem;" class="mt-4 surah font-sans p-3 d-block bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl rounded-2xl">
 <b>A. Pengertian Barisan Bilangan Real Konvergen </b>
                 <p style="text-indent: 20px;">
                     Suatu barisan dikatakan konvergen jika limit barisannya ada. Konsep limit barisan merupakan konsep dasar <i>(basic)</i> dalam matematika analisis. Kekonvergenan pada barisan bilangan real, selanjutnya bisa digeneralisasi pada ruang

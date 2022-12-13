@@ -37,6 +37,10 @@ i.fa-2x {
     font-size: 1.5rem;
 }
 
+.surah {
+    margin-bottom: 7rem;
+}
+
 #search-surah {
     border: 1px solid #0a043c;
     color: #0a043c;
@@ -58,14 +62,22 @@ i.fa-2x {
 
 .container {
     min-height: 90vh;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
     font-family: Quicksand;
+}
+
+.mt-4.bold.w-full.font-sans {
+    margin-bottom: 6rem;
 }
 
 @media(min-width: 360px) {
     .container {
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
+}
+
+.all-surah {
+    margin-bottom: 4rem;
 }
 
 .z-0 {
@@ -248,14 +260,6 @@ input:checked+.slider {
     background-position: 0% 0%;
 }
 
-.fa-facebook-f::before {
-    background-image: linear-gradient(135deg, #3b5998 30%, #0a3d62 50%);
-}
-
-.fa-github::before {
-    background-image: linear-gradient(135deg, #0a043c 30%, #0f1123 50%);
-}
-
-.fa-linkedin-in::before {
-    background-image: linear-gradient(135deg, #007bb5 30%, #0a3d62 50%);
+sm a:hover i::before {
+    background-position: 0% 0%;
 }

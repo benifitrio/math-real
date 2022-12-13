@@ -39,7 +39,7 @@ function Home() {
       </a>
       <a href="#petunjuk" class="block w-1/2 bg-white rounded dark:bg-selfmode dark:text-white shadow-xl mr-2 p-4 menu border">
       <div class="flex justify-center w-full">
-        <img src="../images/petunjuk.png" width="55" class="rounded-full">
+        <img src="../images/petunjuk1.png" width="55" class="rounded-full">
       </div>
         <p class="mt-2 text-xl font-bold text-center">Petunjuk</p>
         <p class="text-xs text-center">Petunjuk Penggunaan Aplikasi Web</p>
@@ -90,7 +90,7 @@ const renderPage = () => {
     });
 
     typewriter
-        .typeString('mau baca surah apa?')
+        .typeString('mau baca materi apa?')
         .pauseFor(300)
         .start();
 
@@ -106,7 +106,10 @@ const renderPage = () => {
           </div>
         </div>
         <div class="surah-body w-full text-left text-sm mb-2">
-        <p>Barisan bilangan real adalah suatu fungsi bernilai real dengan ...</p> 
+        <p>Di sekolah menengah barisan diperkenalkan sebagai kumpulan bilangan yang
+        disusun menurut "pola" tertentu, misalnya barisan aritmatika dan barisan geometri.
+        Biasanya barisan dan deret merupakan satu kesatuan pokok bahasan. Sekarang
+          ...</p> 
       </div>
       <a href="#barisan" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
         </div>
@@ -123,7 +126,10 @@ const renderPage = () => {
       </div>
       <div class="surah-body w-full text-left text-sm mb-2">
       <p>
-      Suatu barisan dikatan konvergen jika limit barisan ...
+      Suatu barisan dikatakan konvergen jika limit barisannya ada. Konsep limit
+barisan merupakan konsep dasar (basic) dalam matematika analisis.
+Kekonvergenan pada barisan bilangan real, selanjutnya bisa digeneralisasi
+pada ruang metrik atau ruang ...
       </p> 
     </div>
     <a href="#konvergen" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
@@ -141,7 +147,8 @@ const renderPage = () => {
         </div>
         <div class="surah-body w-full text-left text-sm mb-2">
         <p>
-        Misal (x<sub>2</sub>) adalah bilangan real. Barisan (x<sub>n</sub>) ...
+        Misal (x<sub>2</sub>) adalah bilangan real. Barisan (x<sub>n</sub>) dikatakan barisan Cauchy jika dan hanya jika (x<sub>n</sub>) memenuhi: untuk ϵ>0,   terdapat   bilangan
+        asli N sedemikian sehingga untuk tiap bilangan asli n,m dengan ...
         </p> 
       </div>
       <a href="#divergen" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
@@ -158,7 +165,8 @@ const renderPage = () => {
           </div>
         </div>
         <div class="surah-body w-full text-left text-sm mb-2">
-        <p>Pada bagian ini kita akan mempelajari konsep limit fungsi. Sebelum melangkah leb...
+        <p>Pada bagian ini kita akan mempelajari konsep limit fungsi. Sebelum melangkah lebih jauh, untuk menyegarkan ingatan, perhatikan
+        kembali fungsi ...
         </p> 
       </div>
       <a href="#limit-fungsi" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
@@ -175,7 +183,9 @@ const renderPage = () => {
           </div>
         </div>
         <div class="surah-body w-full text-left text-sm mb-2">
-        <p>Ada beberapa konsep untuk menguji limit suatu fungsi ...</p> 
+        <p>Ada beberapa konsep untuk menguji limit suatu fungsi, diantaranya dua teorema di
+        bawah ini.
+        ...</p> 
       </div>
       <a href="#limit" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
         </div>
@@ -191,7 +201,7 @@ const renderPage = () => {
           </div>
         </div>
         <div class="surah-body w-full text-left text-sm mb-2">
-        <p> Limit ketika x &#8594 &#8734, misalkan f terdefinisi pada [a, &#8734] untuk ...</p> 
+        <p> Limit ketika x &#8594 &#8734, misalkan f terdefinisi pada [a, &#8734] untuk beberapa bilangan &#8734. Dikatakan ...</p> 
       </div>
       <a href="#limit-takhingga" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
         </div>
@@ -220,7 +230,7 @@ const renderPage = () => {
 
 function profilPage() {
     homeContent.innerHTML =
-        `<div style="margin-bottom:7rem;" class="mt-4 surah font-sans d-block bg-bglightmode text-textlightmode shadow-2xl rounded-2xl dark:bg-selfmode dark:text-white">
+        `<div style="margin-bottom:5rem;" class="mt-4 surah font-sans d-block bg-bglightmode text-textlightmode shadow-2xl rounded-2xl dark:bg-selfmode dark:text-white">
     <img src="../images/diana.png" alt="CV DIANA" class=" shadow-2xl rounded-2xl" />
   </div>`
 }
@@ -316,7 +326,7 @@ function daftarpustaka() {
 
 function petunjuk() {
     homeContent.innerHTML =
-        `<div style="margin-bottom:7rem;" class="mt-4 surah font-sans d-block bg-bglightmode text-textlightmode shadow-2xl rounded-2xl dark:bg-selfmode dark:text-white">
-  <img src="../images/petunjuk.jpg" alt="petunjuk" class=" shadow-2xl rounded-2xl" />
+        `<div style="margin-bottom:5rem;" class="mt-4 surah font-sans d-block bg-bglightmode text-textlightmode shadow-2xl rounded-2xl dark:bg-selfmode dark:text-white">
+  <img src="../images/petunjuk.png" alt="petunjuk" class=" shadow-2xl rounded-2xl" />
 </div>`
 }

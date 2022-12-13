@@ -1,6 +1,6 @@
 function barisanBilangan() {
     homeContent.innerHTML = `
-<div  style="margin-bottom:4rem;" class="mt-4 surah font-sans p-3 d-block bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl rounded-2xl">
+<div  style="margin-bottom:6rem;" class="mt-4 surah font-sans p-3 d-block bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl rounded-2xl">
 <b>A.  Barisan Bilangan Real</b>
 <p style="text-indent: 20px;">
     Di sekolah menengah barisan diperkenalkan sebagai kumpulan bilangan yang disusun menurut "pola" tertentu, misalnya barisan aritmatika dan barisan geometri. Biasanya barisan dan deret merupakan satu kesatuan pokok bahasan. Sekarang barisan dipahami dari
