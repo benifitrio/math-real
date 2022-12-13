@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (page === 'barisan') barisanBilangan()
         if (page === 'divergen') divergen()
         if (page === 'limit-fungsi') limitFungsi()
-        if (page === 'limit-takhingga') limitTakHingga()
+            // if (page === 'limit-takhingga') limitTakHingga()
         if (page === 'konvergen') konvergen()
         if (page === 'limit') limit()
     }

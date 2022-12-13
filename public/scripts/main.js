@@ -203,7 +203,7 @@ pada ruang metrik atau ruang ...
         <div class="surah-body w-full text-left text-sm mb-2">
         <p> Limit ketika x &#8594 &#8734, misalkan f terdefinisi pada [a, &#8734] untuk beberapa bilangan &#8734. Dikatakan ...</p> 
       </div>
-      <a href="#limit-takhingga" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
+      <a href="../limit-tak-hingga.html" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
         </div>
     </div>`;
 
@@ -237,7 +237,7 @@ function profilPage() {
 
 function daftarpustaka() {
     homeContent.innerHTML = `
-<div class="mt-4 surah font-sans p-3 d-block bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl rounded-2xl">
+<div class="mt-4 dapus font-sans p-3 d-block bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl rounded-2xl">
 <h2 class="text-xl text-center font-bold mb-3">DAFTAR PUSTAKA</h2>
 <ul class="divide-y-2 w-100 ">
 <!-- ref 9 -->
