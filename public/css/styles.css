@@ -1,10 +1,9 @@
-@font-face {
-    font-family: arab;
-    src: url(./fonts/lpmq.otf);
-}
-
 * {
     transition: background-color 0.6s ease, color 1s ease;
+}
+
+body {
+    font-family: Quicksand;
 }
 
 #image {
@@ -60,6 +59,7 @@ i.fa-2x {
 .container {
     min-height: 90vh;
     margin-bottom: 6rem;
+    font-family: Quicksand;
 }
 
 @media(min-width: 360px) {
@@ -80,7 +80,6 @@ i.fa-2x {
     width: 500px;
 }
 
-.all-surah,
 .title {
     width: 90%;
 }
@@ -112,13 +111,6 @@ i.fas.fa-search {
     color: #03506f;
 }
 
-div.surah-body,
-.title-heading,
-.arab {
-    font-family: arab, sans-serif;
-    line-height: 3.2rem;
-}
-
 details {
     user-select: none;
 }
@@ -138,10 +130,6 @@ details[open] summary~* {
 .preve:hover,
 .menu {
     box-shadow: 2px 2px 15px rgba(0, 0, 0, .5);
-}
-
-.prevent {
-    pointer-events: none;
 }
 
 

@@ -1,4 +1,3 @@
-const _url = "https://api.quran.sutanlab.id/surah/"
 const homeContent = document.getElementById('content')
 
 function Home() {
@@ -8,21 +7,21 @@ function Home() {
         <div class="absolute z-10 w-full text-center p-4 h-full top-16">
           <p class="text-white text-xl mb-1 font-bold writer"></p>
           <p class="text-sm italic text-white mb-3">"Mimpi boleh melangit tapi kaki harus membumi.  (Kang Emil)"</p>
-        <a href="#baca-quran" class="bg-yellow-300 font-bold  py-1 px-4 rounded-xl shadow-md ">Baca sekarang <i class="text-xs fas fa-arrow-right"></i></a>
+        <a href="#materi-real" class="bg-yellow-300 font-bold  py-1 px-4 rounded-xl shadow-md ">Baca sekarang <i class="text-xs fas fa-arrow-right"></i></a>
       </div>
     </div>
   </div>
   <div class="mt-4 bold w-full font-sans">
     <h2 class="mb-2 text-xl font-bold dark:text-white ">Dashboard</h2>
     <div class="flex w-full">
-      <a href="#baca-quran" class="block w-1/2 bg-white dark:bg-selfmode dark:text-white rounded shadow-xl mr-2 p-4 menu border">
+      <a href="#materi-real" class="block w-1/2 bg-white dark:bg-selfmode dark:text-white rounded shadow-xl mr-2 p-4 menu border">
       <div class="flex justify-center w-full">
       <img src="../images/materi.png" width="50" class="rounded-full">
       </div>
         <p class="mt-2 text-xl font-bold text-center">Materi</p>
         <p class="text-xs text-center">Lengkap beserta pembahasan soal</p>
       </a>
-      <a href="#baca-doa" class="block w-1/2 bg-white dark:bg-selfmode dark:text-white rounded shadow-xl mr-2 p-4 menu border">
+      <a href="#profil" class="block w-1/2 bg-white dark:bg-selfmode dark:text-white rounded shadow-xl mr-2 p-4 menu border">
         <div class="flex justify-center w-full">
           <img src="../images/profile.png" width="50" class="rounded-full">
         </div>
@@ -31,14 +30,14 @@ function Home() {
       </a>
     </div>
     <div class="flex w-full mt-2">
-      <a href="#asmaul" class="block w-1/2 bg-white dark:bg-selfmode dark:text-white rounded shadow-xl mr-2 p-4 menu border">
+      <a href="#daftar-pustaka" class="block w-1/2 bg-white dark:bg-selfmode dark:text-white rounded shadow-xl mr-2 p-4 menu border">
       <div class="flex justify-center w-full">
       <img src="../images/PUSTAKA.png" width="50" class="rounded-full">
     </div>
     <p class="mt-2 text-xl font-bold text-center">Daftar Pustaka</p>
     <p class="text-xs text-center">Referensi yang digunakan</p>
       </a>
-      <a href="#bacaan-shalat" class="block w-1/2 bg-white rounded dark:bg-selfmode dark:text-white shadow-xl mr-2 p-4 menu border">
+      <a href="#petunjuk" class="block w-1/2 bg-white rounded dark:bg-selfmode dark:text-white shadow-xl mr-2 p-4 menu border">
       <div class="flex justify-center w-full">
         <img src="../images/petunjuk.png" width="55" class="rounded-full">
       </div>
@@ -48,7 +47,6 @@ function Home() {
     </div>
   </div>
   `
-
     const writer = document.querySelector('.writer')
     let txt = "Udah baca materi apa hari ini?"
 
@@ -64,17 +62,17 @@ function Home() {
         .start();
 }
 
-const renderPage = async() => {
+
+const renderPage = () => {
     let articlesHTML = "";
     homeContent.innerHTML = `
-    <div class="mt-4 p-4 relative">
-      <input id="search-surah" type="search" name="search"
-        class="w-full p-3 focus:outline-none bg-white text-base rounded-lg mx-auto pl-12">
-        <i class="fas fa-search absolute top-8 left-8 text-2xl"></i>
-    </div>
-    <div class="all-surah  p-4 mx-auto"></div>`;
+  <div class="mt-4 p-4 relative">
+    <input id="search-surah" type="search" name="search"
+      class="w-full p-3 focus:outline-none bg-white text-base rounded-lg mx-auto pl-12">
+      <i class="fas fa-search absolute top-8 left-8 text-2xl"></i>
+  </div>
+  <div class="all-surah  p-4 mx-auto"></div>`;
     const allsurah = document.querySelector(".all-surah")
-    allsurah.innerHTML += loaderTemplate()
 
     const Writerinput = document.getElementById('search-surah')
 
@@ -92,89 +90,115 @@ const renderPage = async() => {
     });
 
     typewriter
-        .typeString('mau baca materi apa?')
+        .typeString('mau baca surah apa?')
         .pauseFor(300)
         .start();
 
-    // try {
-    //     if ("caches" in window) {
-    //         caches.match(_url).then((response) => {
-    //             if (response) {
-    //                 response.json().then(function(data) {
-    //                     console.log('succes get data in cache')
-    //                     data.data.forEach(article => {
-    //                         articlesHTML +=
-    //                             `
-    //               <div class="w-full mt-4 surah bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl">
-    //                 <div data-id="${article.number}" class="w-full p-3 rounded-xl card surahId d-block">
-    //                   <div class="flex prevent justify-around items-center mb-2">
-    //                     <div class=" prevent surah-header rounded-full">
-    //                       ${article.number}
-    //                     </div>
-    //                     <div class=" prevent surah-latin text-xl font-medium">
-    //                       ${article.name.transliteration.id} : ${article.numberOfVerses } Ayat
-    //                     </div>
-    //                     <div class="prevent p-2">
-    //                       <i class="prevent fas fa-heart"></i>
-    //                     </div>
-    //                   </div>
-    //                   <div class=" prevent surah-body w-full text-right text-3xl mb-2">
-    //                       ${article.name.short}
-    //                   </div>
-    //                   <hr>
-    //                   <div class="prevent w-full text-right text-sm italic">
-    //                       Artinya - ${article.name.translation.id}
-    //                     </div>
-    //                 </div>
-    //               </div>`;
-    //                     });
-    //                 })
-    //             }
-    //         })
-    //     }
-
-    //     const response = await fetch(_url)
-    //     const data = await response.json()
-
-    //     data.data.forEach(article => {
-    //         articlesHTML +=
-    //             `
-    //   <div class="w-full mt-4 surah bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl">
-    //     <div data-id="${article.number}" class="w-full p-3 rounded-xl card surahId d-block">
-    //       <div class="flex prevent justify-around items-center mb-2">
-    //         <div class=" prevent surah-header rounded-full">
-    //           ${article.number}
-    //         </div>
-    //         <div class=" prevent surah-latin text-xl font-medium">
-    //           ${article.name.transliteration.id} : ${article.numberOfVerses } Ayat
-    //         </div>
-    //         <div class="prevent p-2">
-    //           <i class="prevent fas fa-heart"></i>
-    //         </div>
-    //       </div>
-    //       <div class=" prevent surah-body w-full text-right text-3xl mb-2">
-    //           ${article.name.short}
-    //       </div>
-    //       <hr>
-    //       <div class="prevent w-full text-right text-sm italic">
-    //           Artinya - ${article.name.translation.id}
-    //         </div>
-    //     </div>
-    //   </div>`;
-    //     });
-    // } catch (err) {
-    //     console.log(err)
-    // }
+    articlesHTML =
+        `<div class="w-full mt-4 surah bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl">
+      <div class="w-full p-3 rounded-xl card surahId d-block">
+        <div class="flex prevent justify-start items-center mb-2">
+          <div class=" prevent surah-header rounded-full mr-2">
+           9
+          </div>
+          <div class=" prevent surah-latin text-base font-medium">
+          BARISAN BILANGAN REAL
+          </div>
+        </div>
+        <div class="surah-body w-full text-left text-sm mb-2">
+        <p>Barisan bilangan real adalah suatu fungsi bernilai real dengan ...</p> 
+      </div>
+      <a href="#" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
+        </div>
+    </div>
+    <div class="w-full mt-4 surah bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl">
+    <div class="w-full p-3 rounded-xl card surahId d-block">
+      <div class="flex prevent justify-start items-center mb-2">
+        <div class=" prevent surah-header rounded-full mr-2">
+         10
+        </div>
+        <div class=" prevent surah-latin text-base font-medium">
+        TEOREMA KE-KONVERGEN
+        </div>
+      </div>
+      <div class="surah-body w-full text-left text-sm mb-2">
+      <p>
+      Suatu barisan dikatan konvergen jika limit barisan ...
+      </p> 
+    </div>
+    <a href="#" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
+      </div>
+  </div>
+  <div class="w-full mt-4 surah bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl">
+      <div class="w-full p-3 rounded-xl card surahId d-block">
+        <div class="flex prevent justify-start items-center mb-2">
+          <div class=" prevent surah-header rounded-full mr-2">
+           11
+          </div>
+          <div class=" prevent surah-latin text-base font-medium">
+          BARISAN DIVERGEN & TEOREMA CAUCHY
+          </div>
+        </div>
+        <div class="surah-body w-full text-left text-sm mb-2">
+        <p>
+        Misal (x<sub>2</sub>) adalah bilangan real. Barisan (x<sub>n</sub>) ...
+        </p> 
+      </div>
+      <a href="#" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
+        </div>
+    </div>
+    <div class="w-full mt-4 surah bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl">
+      <div class="w-full p-3 rounded-xl card surahId d-block">
+        <div class="flex prevent justify-start items-center mb-2">
+          <div class=" prevent surah-header rounded-full mr-2">
+           12
+          </div>
+          <div class=" prevent surah-latin text-base font-medium">
+          LIMIT FUNGSI
+          </div>
+        </div>
+        <div class="surah-body w-full text-left text-sm mb-2">
+        <p>Pada bagian ini kita akan mempelajari konsep limit fungsi. Sebelum melangkah leb...
+        </p> 
+      </div>
+      <a href="#" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
+        </div>
+    </div>
+    <div class="w-full mt-4 surah bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl">
+      <div class="w-full p-3 rounded-xl card surahId d-block">
+        <div class="flex prevent justify-start items-center mb-2">
+          <div class=" prevent surah-header rounded-full mr-2">
+           13
+          </div>
+          <div class=" prevent surah-latin text-base font-medium">
+          TEOREMA LIMIT FUNGSI
+          </div>
+        </div>
+        <div class="surah-body w-full text-left text-sm mb-2">
+        <p>Ada beberapa konsep untuk menguji limit suatu fungsi ...</p> 
+      </div>
+      <a href="#" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
+        </div>
+    </div>
+    <div class="w-full mt-4 surah bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl">
+      <div class="w-full p-3 rounded-xl card surahId d-block">
+        <div class="flex prevent justify-start items-center mb-2">
+          <div class=" prevent surah-header rounded-full mr-2">
+           14
+          </div>
+          <div class=" prevent surah-latin text-base font-medium">
+          LIMIT TAK HINGGA
+          </div>
+        </div>
+        <div class="surah-body w-full text-left text-sm mb-2">
+        <p> Limit ketika x &#8594 &#8734, misalkan f terdefinisi pada [a, &#8734] untuk ...</p> 
+      </div>
+      <a href="#" class="bg-yellow-500 hover:bg-yellow-400 text-white p-2 inline-block mt-2 rounded">Read more</a>
+        </div>
+    </div>`;
 
     allsurah.innerHTML = articlesHTML;
-    document.querySelectorAll('.surahId').forEach(el => {
-        el.addEventListener('click', (e) => {
-            const id = e.target.dataset.id
-            window.location.hash = `#${id}`
-            getSurahById(id)
-        })
-    })
-    document.title = 'Baca Quran'
+    document.title = 'Materi Analisis Real'
 
     const searchSurah = document.getElementById('search-surah')
     searchSurah.addEventListener('keyup', filterSurah)
@@ -194,279 +218,105 @@ const renderPage = async() => {
     }
 }
 
-async function getSurahById(id) {
-    let surahHTML = "";
-
-    // try {
-    //     workbox.routing.registerRoute(
-    //         new RegExp('https://api.quran.sutanlab.id/surah/'),
-    //         workbox.strategies.staleWhileRevalidate({
-    //             cacheName: 'alquran-apps',
-    //             plugins: [
-    //                 new workbox.cacheableResponse.Plugin({
-    //                     statuses: [200],
-    //                 }),
-    //                 new workbox.expiration.Plugin({
-    //                     maxAgeSeconds: 60 * 60 * 24 * 365,
-    //                     maxEntries: 30,
-    //                 }),
-    //             ],
-    //         })
-    //     );
-    //     const response = await fetch(`${_url}${id}`)
-    //     const data = await response.json()
-    //     const surahId = data.data
-
-    //     homeContent.innerHTML = `
-    //   <a href="#baca-quran" class="bg-gray-300 text-indigo inline-block py-1 px-2 rounded-xl"><i class="fas fa-arrow-left mr-2"></i>Kembali</a>
-    //   <div class="title p-4 dark:bg-selfmode dark:text-white shadow-2xl rounded-xl">
-    //     <div class="surah-body w-full text-3xl">
-    //       ${surahId.name.short}
-    //     </div>
-    //     <div class="w-full text-xl">
-    //       (${surahId.name.transliteration.id} : ${surahId.numberOfVerses } Ayat)
-    //       </div>
-    //     </div>
-    //     <div class="all-surah  p-4 mx-auto"></div>
-    //   `
-    //     document.title = `${surahId.name.transliteration.id} : ${surahId.numberOfVerses } Ayat`
-
-    //     surahId.verses.forEach(surah => {
-    //         surahHTML += `
-    //         <div class="bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl mt-4 card p-3 rounded-2xl">
-    //         <div>
-    //           <div class="surah-header rounded-full">
-    //             ${surah.number.inSurah}
-    //           </div>
-    //           <div class="surah-body w-full text-right text-3xl">
-    //           ${surah.text.arab}
-    //           </div>
-    //             <div class="italic w-full text-right text-sm mt-2">
-    //               "${surah.translation.id}"
-    //             </div>
-    //             <div class=" w-full text-left text-sm mt-4">
-    //             <details class="question py-4 border-b">
-    //             <summary class="flex items-center font-bold outline-none focus:outline-none">Tafsir <button class="ml-auto">
-    //             <svg class="fill-current opacity-75 w-4 h-4 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
-    //           </button></summary>
-    //           <div class="mt-4 leading-normal text-sm ">
-    //           ${surah.tafsir.id.long}
-
-    //           </div>
-    //           </details>
-    //             </div>
-    //             <div class="w-full bg-gray-400 mt-2 shadow rounded-2xl btn-audio p-4 
-    //             " data-url="">
-    //               <audio  src="${surah.audio.primary}" id=""  type="audio/mp3" controls="controls" class=" player w-full  outline-none"></audio>
-    //             </div>
-    //         </div>
-    //       </div>`;
-    //     })
-
-    //     document.querySelector(".all-surah").innerHTML = surahHTML
-
-    // } catch (error) {
-    //     console.log(error)
-    // }
-};
-
-async function doaPage() {
+function profilPage() {
     homeContent.innerHTML =
-        `<div class="mt-4 p-4 relative">
-      <input id="search-surah" type="search" name="search"
-        class="w-full p-3 focus:outline-none bg-white text-base rounded-lg mx-auto pl-12">
-        <i class="fas fa-search absolute top-8 left-8 text-xl"></i>
-    </div>
-    <div class="all-surah  p-4 mx-auto">
-    </div>`;
-
-    const Writerinput = document.getElementById('search-surah')
-    const customNodeCreator = function(character) {
-        Writerinput.placeholder = Writerinput.placeholder + character;
-        return null;
-    }
-    const typewriter = new Typewriter(null, {
-        loop: false,
-        delay: 75,
-        onCreateTextNode: customNodeCreator,
-    });
-
-    typewriter
-        .typeString('mau baca materi apa?')
-        .pauseFor(300)
-        .start();
-
-    let doaHTML = "";
-    const doaContent = document.querySelector(".all-surah")
-    doaContent.innerHTML = loaderTemplate()
-        // try {
-        //     if ("caches" in window) {
-        //         caches.match('https://islamic-api-zhirrr.vercel.app/api/doaharian').then((response) => {
-        //             if (response) {
-        //                 response.json().then((data) => {
-        //                     console.log('succes get data in cache')
-        //                     data.data.forEach((article, i) => {
-        //                         doaHTML += `
-        //               <div class="mt-4 surah p-3 pb-6 d-block bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl card rounded-xl">
-        //                 <div>
-        //                   <div class="flex justify-between items-center mb-4">
-        //                     <div class="surah-header rounded-full">
-        //                       ${i+1}
-        //                     </div>
-        //                     <div class="doa surah-latin text-sm font-medium">
-        //                       ${article.title}
-        //                     </div>
-        //                 </div>
-        //                 <div class="surah-body w-full text-right text-3xl">
-        //                       ${article.arabic}
-        //                   </div>
-        //                   <div class="surah-latin w-full text-right text-sm mt-2 italic mt-4">
-        //                     "${article.translation}"
-        //                   </div>
-        //                 </div>
-        //               </div>`;
-        //                     });
-        //                 })
-        //             }
-        //         })
-        //     }
-
-    //     const response = await fetch('https://islamic-api-zhirrr.vercel.app/api/doaharian')
-    //     const data = await response.json()
-
-    //     data.data.forEach((article, i) => {
-    //         doaHTML += `
-    //   <div class="mt-4 surah p-3 pb-6 d-block bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl card rounded-xl">
-    //     <div>
-    //       <div class="flex justify-between items-center mb-4">
-    //         <div class="surah-header rounded-full">
-    //           ${i+1}
-    //         </div>
-    //         <div class="doa surah-latin text-sm font-medium">
-    //           ${article.title}
-    //         </div>
-    //     </div>
-    //     <div class="surah-body w-full text-right text-3xl">
-    //           ${article.arabic}
-    //       </div>
-    //       <div class="surah-latin w-full text-right text-sm mt-2 italic mt-4">
-    //         "${article.translation}"
-    //       </div>
-    //     </div>
-    //   </div>`;
-    //     });
-
-    //     doaContent.innerHTML = doaHTML;
-    //     document.title = 'Doa Harian'
-
-    //     const searchSurah = document.getElementById('search-surah')
-    //     searchSurah.addEventListener('keyup', filterSurah)
-
-    //     function filterSurah(e) {
-    //         const filterValue = e.target.value.toUpperCase()
-
-    //         let surah = document.querySelectorAll('.surah')
-    //         surah.forEach((el, i) => {
-    //             let surahLatin = surah[i].querySelector('.doa')
-    //             if (surahLatin.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
-    //                 surah[i].style.display = ''
-    //             } else {
-    //                 surah[i].style.display = 'none'
-    //             }
-    //         })
-    //     }
-    // } catch (err) {
-    //     console.log(err)
-    // }
+        `<div class="mt-4 surah font-sans d-block bg-bglightmode text-textlightmode shadow-2xl rounded-2xl dark:bg-selfmode dark:text-white">
+    <img src="../images/diana.png" alt="CV DIANA" class=" shadow-2xl rounded-2xl" />
+  </div>`
 }
 
-function bookmark() {
-    homeContent.innerHTML = `<h1 class="text-center font-bold text-2xl mt-4 dark:text-white">Coming soon..</h1>`
-}
-
-async function renderAsmaul() {
-    let asmaulHTML = "";
-
-    homeContent.innerHTML = `<div id="asmaul" class="w-full grid grid-cols-2 gap-2"></div>`;
-    const asmaulPage = document.getElementById('asmaul')
-    asmaulPage.innerHTML = loaderTemplate()
-        // try {
-        //     if ("caches" in window) {
-        //         caches.match('https://islamic-api-zhirrr.vercel.app/api/asmaulhusna').then((response) => {
-        //             if (response) {
-        //                 response.json().then((data) => {
-        //                     console.log('succes get data in cache')
-        //                     data.data.forEach(article => {
-        //                         asmaulHTML += `
-        //               <div class="mt-4 surah p-3 d-block bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl card rounded-xl">
-        //                 <div>
-        //                   <div class="flex justify-between items-center mb-4">
-        //                     <div class="surah-header rounded-full">
-        //                       ${article.index}
-        //                     </div>
-        //                     <div class="doa surah-latin text-xl font-medium">
-        //                       ${article.latin}
-        //                     </div>
-        //                 </div>
-        //                 <div class="surah-body w-full text-right text-3xl">
-        //                       ${article.arabic}
-        //                   </div>
-        //                   <div class="surah-latin w-full text-right text-sm mt-2 italic mt-4">
-        //                     "${article.translation_id}"
-        //                   </div>
-        //                 </div>
-        //               </div>`;
-        //                     });
-        //                 })
-        //             }
-        //         })
-        //     }
-
-    //     const response = await fetch('https://islamic-api-zhirrr.vercel.app/api/asmaulhusna')
-    //     const data = await response.json()
-
-    //     data.data.forEach(article => {
-    //         asmaulHTML += `
-    //   <div class="mt-4 surah p-3 d-block bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl card rounded-xl">
-    //     <div>
-    //       <div class="flex justify-between items-center mb-4">
-    //         <div class="surah-header rounded-full">
-    //           ${article.index}
-    //         </div>
-    //         <div class="doa surah-latin text-xl font-medium">
-    //           ${article.latin}
-    //         </div>
-    //     </div>
-    //     <div class="surah-body w-full text-right text-3xl">
-    //           ${article.arabic}
-    //       </div>
-    //       <div class="surah-latin w-full text-right text-sm mt-2 italic mt-4">
-    //         "${article.translation_id}"
-    //       </div>
-    //     </div>
-    //   </div>`;
-    //     });
-
-    //     asmaulPage.innerHTML = asmaulHTML;
-    //     document.title = 'Asmaul Husna'
-    // } catch (err) {
-    //     console.log(err)
-    // }
-}
-
-async function renderPageSha() {
-    homeContent.innerHTML =
-        `<div class=" p-4 bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl rounded-xl all-surah mx-auto">
-         <h1 class = "text-center font-bold text-2xl mt-4 dark:text-white" > Coming soon.. </h1> 
-         </div>`;
-    document.title = 'Bacaan Shalat'
-}
-
-function aboutPage() {
+function daftarpustaka() {
     homeContent.innerHTML = `
-  <div class="mt-4 surah font-sans p-3 d-block bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl rounded-2xl">
-  <h1 class = "text-center font-bold text-2xl mt-4 dark:text-white" > Coming soon.. </h1>
-</div>
+<div class="mt-4 surah font-sans p-3 d-block bg-bglightmode text-textlightmode dark:bg-selfmode dark:text-white shadow-2xl rounded-2xl">
+<h2 class="text-xl text-center font-bold mb-3">DAFTAR PUSTAKA</h2>
+<ul class="divide-y-2 w-100 ">
+<!-- ref 9 -->
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 ">R. G. Bartle dan D. R. Sherbert. 2011. <i>Introduction to Real Analysis Edisi ke-4.</i> John Wiley & Sons, Inc.
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 ">M. Stoll. 2001.<i>Introduction to Real Analysis.</i> Addison Wesley Longman, Inc.
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 ">Davidson, K.R dan Donsig, A. P, 2010. <i>Real Analysis andApplications, Theory and 
+    Practice, </i> Springer Science + Business Media, LLC 2010, Chapter 9.
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 ">Royden, H.L.,1987.<i>Real Analysis, </i> Third Edition, Prentice Hall, Englewood Cliffs, Chapter 7.
+</li>
+<!-- ref 10 -->
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 ">Andayani.,S. 2020.<i>ahan Ajar Analisis Real 1.</i> Universitas Muhammadiyah Metro
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200">Bartle, R. G dan Donald R. Sherbert. 2000. <i> Introduction to Real Analysis. 3 th.</i> USA: John Wiley and Sons.
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 ">Hernadi. J. 2019. <i> Pengantar Analisis Real 1 </i>
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 ">Sari K.,D., dkk.<i> Menara Ilmu Analisis Real. </i> Universitas Gajah Mada
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200">Subhan, M., 2017. <i> Analisis Real 1.</i> Universitas Negeri Padang
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 " style="overflow-wrap: break-word;">https://analisisreal.mipa.ugm.ac.id/barisanderet/barisan-konvergen/
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 ">https://mathpro.id/pembahasan-soal/limit-barisan.html
+</li>
+<!-- ref 11 -->
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 ">
+    Bartle, R.G and Sherbert, D.R. 2000. <i>Interoduction to Real Analysis.</i> Third Edition. John Wiley and Sons. Ine. USA.
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 ">
+    Riyanto, M. Zaki. 2008. <i>Pengantar Analisis Real I.</i> Yogyakarta.
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 ">
+    Wen, Themes. 2021. <i>Analisis Real Lanjut 
+        : Barisan Cauchy.</i> https://proofficial.id/analisis-real-lanjut-barisan-cauchy/. Diakses pada 15 November 2021 pukul 19.00 WIB.
+</li>
+<!-- ref 12 -->
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 ">
+    Sudrajat, Asep. 2000. <i>Prestasi Matemtika 2. </i> Ganeca Axact. Bandung.
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 ">
+    Suryanto.2014. <i>Pengantar Analisis Real.</i> Universitas Terbuka, Jakarta.
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 " style="overflow-wrap: break-word;">
+    Syamsul, Maarif. https://www.academia.edu/10223619/227642780_MAKAL AH_LIMIT_FUNGS.doch
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 ">
+    https://www.zenius.net/blog/pembahasan-limit-fungsi-beserta-limit- menujutak-hingga
+</li>
+<!-- ref 13 -->
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200">
+    Ghozali Unique. 2013. <i>Analisi Riil II.</i> https://id.scribd.com/doc/148789827/Anlisis-RealII- pdf. 01 Desember 2021
+</li>
+<!-- ref 14 -->
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200" style="overflow-wrap: break-word;">
+    Admin. 2021.<i>Contoh Soal Limit.</i> http://teamhannamy.blogspot.com/2021/02/28- contoh-soal-limit-beserta-pembahasan.html?m=1. Diakses 13 Desember 2021 pukul 09:34 WIB.
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200">
+    Long. 2020. <i>Limit Tak Hingga, Contoh Soal dan Pembahasan.
+    </i> https://jagostat.com/matematika-dasar/limit-bentuk-tak-hingga Diakses pada 14 Desember 2021 pukul 22:34 WIB.
 
-  `
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200">
+    Mursita, D. 2013. <i>Limit Tak Hingga dan Limit di Tak Hingga.
+    </i> https://studylibid.com/doc/1196 443/limit-tak-hingga-dan-limit-di-tak- hingga. Diakses pada 12 Desember 2021 pukul 11:30 WIB.
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 " style="overflow-wrap: break-word;">
+    People.usd.id. 2018.
+    <i>LIMIT 
+        TAK 
+        HINGGA.</i> http://people.usd.ac.id/~ydkristanto/wp- content/uploads/2018/02/08Limit -di-Tak-Hingga-Limit-Tak. Diakses pada 12 Desember 2021 pukul 11:00 WIB.
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 ">
+    Statmat. 2021.<i>Teorema Limit Tak Hingga Contoh Soal dan Pembahasan.
+    </i> https://www.statmat.net/limit-tak-hingga/ Disakses pada 13 Desember 2021 pukul 10:11 WIB.
+</li>
+<li class="p-3 hover:bg-blue-600 hover:text-blue-200 " style="overflow-wrap: break-word;">
+    Syaefulamin. 2018. <i>Bentuk Limit 
+        Tak Hingga. </i> https://syaefulamin156.wordpress.com/2019/07/16/kalkulus-bentuk-tak- tentu-limit-fungsi/amp/. Diakses pada 14 Desember 2021 pukul 22:37 WIB.
+</li>
+</ul>
+</div>`
+}
+
+function petunjuk() {
+    homeContent.innerHTML =
+        `<div class="mt-4 surah font-sans d-block bg-bglightmode text-textlightmode shadow-2xl rounded-2xl dark:bg-selfmode dark:text-white">
+  <img src="../images/petunjuk.jpg" alt="CV DIANA" class=" shadow-2xl rounded-2xl" />
+</div>`
 }
